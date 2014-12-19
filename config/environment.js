@@ -21,6 +21,18 @@ module.exports = function(environment) {
     }
   };
 
+  //see: http://content-security-policy.com/ for more info
+  ENV.contentSecurityPolicy = {
+    'default-src': "'none'",
+    'script-src': "'self' 'unsafe-eval'",
+    'font-src': "'self'",
+    'connect-src': "'self'",
+    'img-src': "'self' http://i.keen.com",
+    // Allow inline styles and loaded CSS from http://fonts.googleapis.com
+    'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+    'media-src': "'self'"
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     ENV.APP.LOG_ACTIVE_GENERATION = true;
