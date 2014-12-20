@@ -6,6 +6,15 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.resource('listings', function() {
+    this.route('new');
+  });
+
+  this.resource('drafts', {path: 'listings/drafts/'});
+  this.resource('proto-draft', {path: 'listings/proto-drafts/:draft_id'});
+  this.resource('draft', {path: 'listings/drafts/:draft_id'});
+
+  this.resource('about');
 });
 
 export default Router;

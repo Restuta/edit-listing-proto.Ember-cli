@@ -1,0 +1,19 @@
+<div>
+    <div class="row" style="padding-bottom: 10px;">
+        <label>Edit Listing Draft or </label>
+        {{#link-to 'listings.new' class="btn btn-primary btn-sm"}}
+            Create new
+        {{/link-to}}
+    </div>
+    <div class="row">
+        {{#each draft in model}}
+            <div>
+                {{#link-to 'proto-draft' draft}}
+                    {{draft.id}} {{draft.name}} ${{draft.minuteRate}} min
+                {{/link-to}}
+            </div>
+        {{/each}}
+
+        <label>Total : {{total}}</label>
+    </div>
+</div>

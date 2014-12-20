@@ -1,0 +1,66 @@
+/* Contains styles generic to the whole application */
+
+$keen-green: #88b535;
+$error-red: #b94a48;
+
+.green{
+  color: $keen-green;
+}
+
+.dropdown.dropdown-custom {
+  text-indent: 15px;
+  line-height: 28px;
+  font-size: 18px;
+  width: 200px;
+}
+
+.row.margin-bot {
+  margin-bottom: 10px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+  color: $error-red;
+}
+
+.field-validation-valid {
+  display: none;
+}
+
+input.input-validation-error {
+  border: 1px solid $error-red;
+}
+
+input[type="checkbox"].input-validation-error {
+  border: 0 none;
+}
+
+.validation-summary-errors {
+  color: $error-red;
+}
+
+.validation-summary-valid {
+  display: none;
+}
+
+.font-small {
+  font-size: 10px;
+}
+
+.minHeaderSubNavBarMain {
+  background-color: $keen-green;
+  height: 5px;
+}
+
+.minHeaderSubNavBarSecondary {
+  background-color: #cce49c;
+  height: 3px;
+}
+
+.navbar {
+  border: 0px;
+}
+
+.navbar-brand {
+  padding: 15px 20px;
+}
