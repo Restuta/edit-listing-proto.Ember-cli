@@ -1,7 +1,8 @@
-/* Contains styles generic to the whole application */
+/* Contains styles and variables global to the whole application */
 
 $keen-green: #88b535;
 $error-red: #b94a48;
+$font-small: 10px;
 
 .green{
   color: $keen-green;
@@ -44,5 +45,5 @@ input[type="checkbox"].input-validation-error {
 }
 
 .font-small {
-  font-size: 10px;
+  font-size: $font-small;
 }

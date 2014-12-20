@@ -1,10 +1,11 @@
 /*Manifest file, used to import all SASS dependencies */
 
-//generic styles and variables
-@import 'generic/base';
+//global styles and variables
+@import 'global/base';
+@import 'global/bootstrap-overrides';
 
 //header navigation bar
-@import 'generic/nav-bar';
+@import 'global/nav-bar';
 
 //spinner styles
-@import 'generic/spinner';
+@import 'global/spinner';
