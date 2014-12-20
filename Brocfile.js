@@ -1,13 +1,14 @@
 /* global require, module */
 
-var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var EmberApp = require('ember-cli/lib/broccoli/ember-app')
+  , pickFiles = require('broccoli-static-compiler');
 
 var app = new EmberApp({
   outputPaths: {
     app: {
       css: {
-        'app' : '/assets/keen.css',
-        'import-bootstrap' : '/assets/bootstrap.css'
+        'app': '/assets/keen.css',
+        'import-bootstrap': '/assets/bootstrap.css'
       }
     }
   }
@@ -28,4 +29,11 @@ var app = new EmberApp({
 
 app.import('bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap.js');
 
-module.exports = app.toTree();
+// Glyphicons
+
+var bootstrapFonts = pickFiles('bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap', {
+  srcDir: '/',
+  destDir: '/assets/fonts'
+});
+
+module.exports = app.toTree(bootstrapFonts);
