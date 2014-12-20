@@ -26,7 +26,7 @@ module.exports = function(environment) {
     'default-src': "'none'",
     'script-src': "'self' 'unsafe-eval'",
     'font-src': "'self'",
-    'connect-src': "'self'",
+    'connect-src': "*",
     'img-src': "'self' http://i.keen.com",
     // Allow inline styles and loaded CSS from http://fonts.googleapis.com
     'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
