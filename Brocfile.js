@@ -1,17 +1,17 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app')
-  , pickFiles = require('broccoli-static-compiler');
+    , pickFiles = require('broccoli-static-compiler');
 
 var app = new EmberApp({
-  outputPaths: {
-    app: {
-      css: {
-        'app': '/assets/keen.css',
-        'import-bootstrap': '/assets/bootstrap.css'
-      }
+    outputPaths: {
+        app: {
+            css: {
+                'app': '/assets/app.css',
+                'import-bootstrap': '/assets/bootstrap.css'
+            }
+        }
     }
-  }
 });
 
 // Use `app.import` to add additional libraries to the generated
@@ -32,8 +32,8 @@ app.import('bower_components/bootstrap-sass-official/vendor/assets/javascripts/b
 // Glyphicons
 
 var bootstrapFonts = pickFiles('bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap', {
-  srcDir: '/',
-  destDir: '/assets/fonts'
+    srcDir: '/',
+    destDir: '/assets/fonts'
 });
 
 module.exports = app.toTree(bootstrapFonts);
