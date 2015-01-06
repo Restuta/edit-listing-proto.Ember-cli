@@ -1,51 +1,51 @@
 <div class="container">
     <form role="form">
         <h2>Settings</h2>
-
         <div class="well row form-horizontal">
             <div class="form-group">
                 <label class="col-sm-3 control-label" for="phone-number">Confirm Your Phone Numbers:</label>
-
                 <div class="col-lg-9 col-md-9 col-sm-9">
-                    <input class="form-control" type="text" id="phone-number" placeholder="Phone Number"
-                           data-mask="(999) 999-9999" style="max-width: 160px"/>
+                    <input class="form-control" type="text" id="phone-number" placeholder="Phone Number" data-mask="(999) 999-9999" style="max-width: 160px" />
                     <a class="text-muted font-small">International Phone Numbers</a>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-3 control-label" for="category">Category and Topic:</label>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                  {{view "select"
+                  content=firstLevelCategory
+                  optionValuePath="content.id"
+                  optionLabelPath="content.name"
+                  value=selectedFirstLevelCategoryId
+                  class="form-control"
+                  }}
+                </div>
+              {{#if secondLevelCategory.length}}
+                  <div class="col-lg-3 col-md-3 col-sm-3">
+                    {{view "select"
+                    content=secondLevelCategory
+                    optionValuePath="content.id"
+                    optionLabelPath="content.name"
+                    value=selectedSecondLevelCategoryId
+                    class="form-control"
+                    }}
+                  </div>
+              {{/if}}
 
-                <div class="col-lg-3 col-md-3 col-sm-3">
-                    <select class="form-control" id="category">
-                        <option>Category 1</option>
-                        <option>Category 2</option>
-                        <option>Category 3</option>
-                        <option>Category 4</option>
-                        <option>Category 5</option>
-                    </select>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3">
-                    <select class="form-control">
-                        <option>Sub-Category 1</option>
-                        <option>Sub-Category 2</option>
-                        <option>Sub-Category 3</option>
-                        <option>Sub-Category 4</option>
-                        <option>Sub-Category 5</option>
-                    </select>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3">
-                    <select class="form-control">
-                        <option>Sub-Sub-Category 1</option>
-                        <option>Sub-Sub-Category 2</option>
-                        <option>Sub-Sub-Category 3</option>
-                        <option>Sub-Sub-Category 4</option>
-                        <option>Sub-Sub-Category 5</option>
-                    </select>
-                </div>
+              {{#if thirdLevelCategory.length}}
+                  <div class="col-lg-3 col-md-3 col-sm-3">
+                    {{view "select"
+                    content=thirdLevelCategory
+                    optionValuePath="content.id"
+                    optionLabelPath="content.name"
+                    value=selectedThirdLevelCategoryId
+                    class="form-control"
+                    }}
+                  </div>
+              {{/if}}
             </div>
             <div class="form-group">
                 <label class="col-sm-3 control-label" for="chat">Chat:</label>
-
                 <div class="col-lg-9 col-md-9 col-sm-9">
                     <div class="checkbox">
                         <label>
@@ -57,7 +57,6 @@
 
             <div class="form-group">
                 <label class="col-sm-3 control-label" for="phone-number">Minute Rate:</label>
-
                 <div class="col-lg-4 col-md-4 col-sm-4">
                     <div class="input-group">
                         <span class="input-group-addon">$</span>
@@ -97,17 +96,15 @@
         </div>
 
         <h2>Display Details</h2>
-
         <div class="well row">
             <div class="row" style="margin-bottom: 20px; margin-left: 15px; margin-right: 15px;">
                 <div class="form-group">
-                    <input class="form-control input-lg col-lg-12" type="text" id="title" placeholder="Title"/>
+                    <input class="form-control input-lg col-lg-12" type="text" id="title" placeholder="Title" />
                 </div>
                 <div class="form-group">
                     <div class="col-lg-3 col-md-3 col-sm-3">
-                        <img src="/images/your-photo-here.png" class="img-responsive img-thumbnail"/>
+                        <img src="/images/your-photo-here.png" class="img-responsive img-thumbnail" />
                         <input type="file" class="form-control-static" id="exampleInputFile">
-
                         <p class="help-block">Put your image here.</p>
                     </div>
 
@@ -121,7 +118,6 @@
                                     <div class="panel-body form-horizontal">
                                         <div class="form-group">
                                             <label class="control-label col-lg-8 col-md-8">Minute Rate</label>
-
                                             <div class="col-md-4 col-lg-4">
                                                 <p class="form-control-static"> $2.99</p>
                                             </div>
@@ -133,8 +129,7 @@
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-9">
-                    <textarea class="form-control" rows="6"
-                              placeholder="Short summary of your service. For example...."></textarea>
+                    <textarea class="form-control" rows="6" placeholder="Short summary of your service. For example...."></textarea>
                 </div>
             </div>
 
@@ -143,14 +138,10 @@
 
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#intro" aria-controls="intro" role="tab"
-                                                                  data-toggle="tab">Home</a></li>
-                        <li role="presentation"><a href="#reviews" aria-controls="reviews" role="tab"
-                                                   data-toggle="tab">Reviews</a></li>
-                        <li role="presentation"><a href="#calendar" aria-controls="calendar" role="tab"
-                                                   data-toggle="tab">Calendar</a></li>
-                        <li role="presentation"><a href="#pricing" aria-controls="pricing" role="tab"
-                                                   data-toggle="tab">Pricing</a></li>
+                        <li role="presentation" class="active"><a href="#intro" aria-controls="intro" role="tab" data-toggle="tab">Home</a></li>
+                        <li role="presentation"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Reviews</a></li>
+                        <li role="presentation"><a href="#calendar" aria-controls="calendar" role="tab" data-toggle="tab">Calendar</a></li>
+                        <li role="presentation"><a href="#pricing" aria-controls="pricing" role="tab" data-toggle="tab">Pricing</a></li>
                     </ul>
 
                     <!-- Tab panes -->
@@ -193,14 +184,12 @@
 
                                 <div class="row">
                                     <h4 style="margin-left:20px;">My approach </h4>
-
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <textarea class="form-control" rows="6" placeholder="Approach...."></textarea>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <h4 style="margin-left:20px;">My background </h4>
-
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <textarea class="form-control" rows="6" placeholder="Approach...."></textarea>
                                     </div>
