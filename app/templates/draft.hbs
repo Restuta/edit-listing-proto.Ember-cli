@@ -60,7 +60,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-4">
                     <div class="input-group">
                         <span class="input-group-addon">$</span>
-                        <input type="number" class="form-control" placeholder="Price" style="max-width: 100px">
+                      {{input id="minute-rate" type="number" class="form-control" value=minuteRate placeholder="Price"}}
                     </div>
                     <div class="checkbox">
                         <label>
@@ -74,7 +74,7 @@
                             <table class="table table-condensed">
                                 <tr>
                                     <td>Price Per Minute that customers will see:</td>
-                                    <td>$2.19</td>
+                                    <td>${{minuteRate}}</td>
                                 </tr>
                                 <tr>
                                     <td>Connection Charges:</td>
@@ -82,11 +82,11 @@
                                 </tr>
                                 <tr>
                                     <td>Our Fee</td>
-                                    <td>$0.60</td>
+                                    <td>${{ourFee}}</td>
                                 </tr>
                                 <tr class="success">
                                     <td>You will earn (per minute):</td>
-                                    <td>$1.39</td>
+                                    <td>${{youWillEarn}}</td>
                                 </tr>
                             </table>
                         </div>
@@ -135,7 +135,6 @@
 
             <div class="row">
                 <div role="tabpanel" style="padding: 15px">
-
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#intro" aria-controls="intro" role="tab" data-toggle="tab">Home</a></li>
