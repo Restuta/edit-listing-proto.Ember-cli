@@ -23,7 +23,7 @@
             <div class="form-group">
                 <label class="col-sm-3 control-label" for="phone-number">Confirm Your Phone Numbers:</label>
                 <div class="col-lg-9 col-md-9 col-sm-9">
-                    <input class="form-control" type="text" id="phone-number" placeholder="Phone Number" data-mask="(999) 999-9999" style="max-width: 160px" />
+                  {{input id="phone-number" type="text" width="160px" class="form-control" value=primaryPhoneNumber placeholder="Phone Number" data-mask="(999) 999-9999" }}
                     <a class="text-muted font-small">International Phone Numbers</a>
                 </div>
             </div>
@@ -121,9 +121,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-lg-3 col-md-3 col-sm-3">
-                        <img src="/images/your-photo-here.png" class="img-responsive img-thumbnail" />
-                        <input type="file" class="form-control-static" id="exampleInputFile">
-                        <p class="help-block">Put your image here.</p>
+                        {{image-upload}}
                     </div>
 
                     <div class="col-lg-9 col-md-9 col-sm-9">
