@@ -13,6 +13,21 @@ export default Ember.ObjectController.extend({
     selectedSecondLevelCategoryId: 0,
     selectedThirdLevelCategoryId: 0,
 
+    //todo: temporary props for the component testing should be part of the model
+    skills: function(){
+        return ['Medium','Clairvoyant'];
+    }.property(),
+
+    specializations: function(){
+        return ['Unexpected disaster','Love problems'];
+    }.property(),
+
+    languages: function(){
+        return ['English','Ukrainian','Sanskrit', 'French','Latin'];
+    }.property(),
+
+
+
     firstLevelCategory: function() {
         var listingCategories = this.get('listingCategories');
 
